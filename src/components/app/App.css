@@ -1,0 +1,205 @@
+/* 
+    Layout
+    body = nav + main
+    main = div.body + footer
+*/
+
+:root{
+    --nav-width: 13%;
+    --max-screen-width: 1440px;
+    --progress-bar-widtht: 5px;
+}
+
+* {
+  font-family: Verdana, Geneva, sans-serif, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile view CSS */
+@media only screen and (max-width: 768px){
+    /* nav */
+    nav{
+        height: 5em;
+    }
+
+    #navLinks{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        justify-content: space-between;
+        padding-right: 3.5em;
+
+        /* Center vertically */
+        height: 100%;
+        align-items: center;
+
+        /* Background transition */
+        /* fallback for old browsers */
+        background: #159957;  
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        /* Left to right: https://www.w3schools.com/css/css3_gradients.asp */
+        background: linear-gradient(to right,#159957, #155799); 
+    }
+
+    /* Logo */
+    #navLinks > div:first-child img {
+        height: 4em;
+    }
+
+    #navLinks a svg:hover{
+        /* Cursor properties https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+        cursor: pointer;
+        transform: scale(1.17);
+        transition-duration: 1.5s;
+        fill: rgb(4, 15, 65);
+    }
+
+    #progress-container{
+        display: none;
+    }
+
+     /* Content */
+    #pageContent{
+        width: 100%;
+        background: lightgrey;
+    }
+
+    section{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 3.5em 2em 1em 2em;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 768px){
+    body{
+        max-width: var( --max-screen-width );
+    }
+
+    /* #root{} */
+
+    /* Navigation */
+    nav {
+        height: 100vh;
+        width: var( --nav-width );
+        /* calc cant really multiply two varibales */
+        /* result of var( --nav-width ) and var( --max-screen-width ) must be put manually */
+        max-width: calc( 0.13 * 1440px );
+        position: fixed;
+
+        /* Background transition */
+        /* fallback for old browsers */
+        background: #159957;  
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(#159957, #155799); 
+    }
+
+    #navLinks{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        /* Icons will be spread in the whole nav */
+        height: 100%;
+        padding-bottom: 5em;
+
+        /* Centers icons */
+        text-align: center;
+    }
+
+    /* Website logo */
+    #navLinks > div:first-child img {
+        width: 80%;
+        min-width: 5em;
+    }
+
+    #navLinks a svg:hover{
+        /* Cursor properties https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+        cursor: pointer;
+        transform: scale(1.17);
+        transition-duration: 1.5s;
+        fill: rgb(4, 15, 65);
+    }
+
+    /* Progress bar */
+    /* ================================== */
+    #progress-container{
+        height: 100vh;
+        position: fixed;
+        width: var( --progress-bar-widtht );
+        border-right: 1px solid black;
+    }
+
+    @keyframes barberpole {
+    100% {
+        background-position: 100% 100%;
+    }
+    }
+
+    /* The progress bar (scroll indicator) */
+    #progress-bar {
+        /* Always same as its container */
+        width: 100%;
+
+        border-bottom: 2px solid black;
+        border-bottom-right-radius: 5px;
+
+        /* Stripe gnerator */
+        /* https://stripesgenerator.com/ */
+        background-image: linear-gradient(67deg, #2865b5 25%, #0b702d 25%, #0b702d 50%, #2865b5 50%, #2865b5 75%, #0b702d 75%, #0b702d 100%);
+        background-size: 43.45px 102.37px;
+
+        /* Stripe animation */
+        /* https://css-tricks.com/books/fundamental-css-tactics/striped-barberpole-animation/ */
+        background-size: 100% 25%;
+        animation: barberpole 5s linear infinite;
+    }
+
+
+    /* Main tag */
+
+    /* Content */
+    #pageContent{
+        margin-left: var( --nav-width );
+        max-width: calc( 100% - var( --nav-width ) );
+        background: lightgrey;
+    }
+
+    section{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 3.5em 2em 1em 2em;
+        /* width: 100%; */
+    }
+
+    /* Footer */
+}
+
+
+/* Footer CSS is same for mobile and web version */
+/* Footer */
+footer{
+    padding-top: 2em;
+    text-align: center;
+    /* background-color: #495c6f; */
+    background-color: grey;
+}
+
+footer > div > a svg{
+    margin: auto 1em;
+    font-size: 2em;
+    color: black;
+}
+
+footer > div > a svg:hover{
+    transform: scale(1.35, 1.35);
+}
+
+footer > div > a:hover{
+    text-decoration: none;
+}
+
+footer a:visited{
+    color: black;
+}

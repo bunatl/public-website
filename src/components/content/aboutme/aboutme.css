@@ -1,0 +1,158 @@
+@media screen and (max-width: 915px) {
+    
+    /* Certificates */
+    #certificates{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #certificates > div{ 
+        width: 45%;
+        min-width: 16em;
+        margin: 0 auto;
+    }
+
+    #certificates > div > table{
+        min-height: 28em;
+        text-align: center;
+        vertical-align: middle;
+    } 
+}
+
+@media screen and (min-width: 915px) {
+    /* Certificates */
+    #certificates{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+    }
+
+    /* Individual tables */
+    #certificates > div {
+        margin: auto .3em;
+    }
+
+    #certificates > div{
+        text-align: center;
+        width: 32%;
+    }
+
+    #certificates > div > table{
+        min-height: 32.5em;
+    }
+    
+}
+
+
+/* Shared */
+h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: .7em;
+}
+
+h2{
+    margin-bottom: .5em;
+}
+
+/* about me */
+
+#aboutMeSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+#aboutMeCard{
+    min-width: 18rem;
+    /* margin-left: 2em; */
+
+    text-align: center;
+}
+
+#aboutMeCard a,
+#aboutMeCard a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+#aboutMeCard > div > div a:hover{
+    transform: scale(1.4);
+    font-weight: bold;
+    /* font-size: 1.2em; */
+}
+
+/* target last row in the card with social media */
+#aboutMeCard > div > div > div:last-child > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+#aboutMeCard .socialMedia {
+    width: 100%;
+    font-size: 1.4em;
+}
+
+
+/* Tables general */
+table > tbody > tr:first-child{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* Skills */
+#skillsNav{
+    border: 1px solid white;
+    border-top-right-radius: .38em;
+    border-top-left-radius: .38em;
+
+    font-size: min(2.2vw, 1em);
+}
+
+
+#skillsNav > div > a{
+    height: 100%;
+}
+
+#skillsNav a{
+    color: black;
+}
+
+#skillsNav .nav-item .active{
+    font-weight: bold;
+}
+
+#skills table {
+    text-align: center;
+}
+
+#skills table td{
+    width: 25%;
+}
+
+/* Certificates CSS are on top */
+
+#certificates > div > table > tbody > tr:first-child,
+#certificates > div > table > tbody > tr:nth-child(2){
+    height: 3em;
+}
+
+#certificates > div > table > tbody > tr:last-child{
+    height: 16em;
+}
+
+
+/* education */
+#education  > tbody > tr:first-child > td:first-child{
+    /* horizontal center */
+    text-align: center;
+    /* vertical middle */
+    vertical-align: middle;
+}

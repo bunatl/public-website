@@ -1,0 +1,93 @@
+#portfolio{
+    padding: 2em;
+}
+
+.project{
+    /* overrule section css */
+    padding: .75em;
+
+    margin-bottom: 2em;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.project > div:first-child{
+    border-right: 1px solid black;
+}
+
+/* left side */
+.project > div:first-child {
+    width: 55%;
+}
+
+.project > div:first-child > div:first-child  img{
+    max-width: 100%;
+    max-height: 30vh;
+}
+
+/* center img/gif that doesnt take 100% width */
+.project > div:first-child > div:first-child{
+    text-align: center;
+}
+
+/* git, demo + technologies div too*/
+.project > div:first-child > div:nth-child(2),
+.project > div:first-child > div:nth-child(3){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-around;
+}
+
+.project > div:first-child > div:nth-child(2) > div,
+.project > div:first-child > div:nth-child(2) > div > a{
+    width: 50%;
+    text-align: center;
+    font-size: min(2.5vw, 1.2em);
+
+    color: black;
+    text-decoration: none;
+
+    margin: 1em auto;
+}
+
+.project > div:first-child > div:nth-child(2) > div:hover{
+    transform: scale(1.15);
+    font-weight: bold;
+}
+
+/* technolgies only */
+.project > div:first-child > div:nth-child(3) > div{
+    width: 33%;
+    text-align: center;
+    font-size: min(2.2vw, 1.25em);
+}
+
+.project > div:first-child > div:nth-child(3) > div a,
+.project > div:first-child > div:nth-child(3) > div a:hover{
+    color: black;
+    text-decoration: none;
+    font-size: .85em;
+}
+
+/* right side */
+.project > div:last-child {
+    width: 45%;
+}
+
+/* name */
+.project > div:last-child > div:first-child {
+    font-size: min(2.65vw, 2.1em);
+    padding-left: 2em;
+    margin-bottom: .8em;
+    font-weight: bold;
+}
+
+.project > div:last-child > div:last-child {
+    font-size: min(2.2vw, 1em);
+}

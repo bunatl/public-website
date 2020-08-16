@@ -1,0 +1,68 @@
+#blog{
+    padding: auto 2em;
+    min-height: 85.2vh;
+}
+
+/* blogSearchBar */
+#blogSearchBar{
+    width: 85%;
+
+    margin: 0 auto;
+}
+
+/* lists of topics */
+#topicLists{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+    border: 2px solid gray;
+    border-radius: 1.5em;
+    padding: 1em;
+    margin: 1.5em;
+
+    font-size: min(2vw, 1em);
+}
+
+#topicLists ul ul{
+    padding-left: 10%;
+}
+
+#topicLists > div {
+    width: 28%;
+}
+
+/* Button */
+#topicLists > div > button{
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/* Actual list contaning the list */
+/* ul */
+.topicList{
+    padding-left: 1em;
+    list-style: none;
+}
+
+.topicList > li{
+    margin-bottom: 1em;
+}
+/* first line of the li with nested ul */
+.topicList > li > span{
+    font-weight: bold;
+}
+
+.topicList > li > ul li{
+    list-style-type: disc;
+    font-style: italic;
+    color: black;
+}
+                
+.topicList > li > ul a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    transform: scale(1.025);
+}

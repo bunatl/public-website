@@ -3,6 +3,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 
 import resumeLink from '../../../../assests/pdf/resume.pdf';
+import avatar from '../../../../assests/images/profilePhoto.jpg';
 
 function BioCard () {
   const cardStyle = {
@@ -14,7 +15,7 @@ function BioCard () {
 
   return (
     <Card id="aboutMeCard">
-      <Card.Img variant="top" src="https://www.w3schools.com/howto/img_avatar.png" />
+      <Card.Img variant="top" src={ avatar } />
       <Card.Body>
         <Card.Title>Lukas Bunat</Card.Title>
         <Card.Text>

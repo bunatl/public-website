@@ -68,34 +68,40 @@ h2{
 
 }
 
-#aboutMeCard{
-    min-width: 18rem;
+#aboutMeSection > div:first-child{
+    flex: 3;
+}
+
+#aboutMePageCard{
+    min-width: 12em;
+    width: 40%;
+    flex: 1;
     /* margin-left: 2em; */
 
     text-align: center;
 }
 
-#aboutMeCard a,
-#aboutMeCard a:hover{
+#aboutMePageCard a,
+#aboutMePageCard a:hover{
     text-decoration: none;
     color: black;
 }
 
-#aboutMeCard > div > div a:hover{
+#aboutMePageCard > div > div a:hover{
     transform: scale(1.4);
     font-weight: bold;
     /* font-size: 1.2em; */
 }
 
 /* target last row in the card with social media */
-#aboutMeCard > div > div > div:last-child > div{
+#aboutMePageCard > div > div > div:last-child > div{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
 }
 
-#aboutMeCard .socialMedia {
+#aboutMePageCard .socialMedia {
     width: 100%;
     font-size: 1.4em;
 }

@@ -1,0 +1,12 @@
+#tutoringTable td,
+#tutoringTable tr:first-child{
+    font-weight: normal;
+    font-size: min(1.6vw, 1em);
+    /* background: blueviolet; */
+}
+
+#tutoringTable td:first-child{
+    vertical-align: middle;
+    width: 30%;
+}
+

@@ -5,21 +5,23 @@ import Project from './portfolio/Project';
 import './portfolio/portfolio.css';
 
 // import projects preview pics
-
 // import tech icons react, js es6 / 2017, html5, css3
 // FaHtml5, FaNodeJs, FaJava, FaGithub --  DiMongodb, DiMysql
 import { FaNodeJs, FaGithub, FaReact, FaJava } from 'react-icons/fa';
 import { RiComputerLine } from 'react-icons/ri';
+// import { SiTypescript } from "react-icons/si";
 // import { DiMongodb } from 'react-icons/di';
 // import { DiJavascript } from "react-icons/di";
 // import { IoLogoCss3 } from "react-icons/io";
 
 // images
 import converterGif from '../../assests/gif/currency-converter-demo.gif';
+import userGenGif from '../../assests/gif/user-generator-demo.gif';
 import scraperGif from '../../assests/gif/webscrape-demo.gif';
 import tweetGif from '../../assests/gif/tweet-bot-demo.gif';
 import recorderPng from '../../assests/images/projects/mouse-recorder-gui.png';
 import stockLogger from '../../assests/images/projects/StockLogger-gui.png';
+import www from '../../assests/images/projects/personalWebsite.png';
 
 function Portfolio () {
   // name, preview, git, demo, tech[], info[]
@@ -37,6 +39,22 @@ function Portfolio () {
         "User can filter specific only currency by country or currency code",
         "Currency rates from the past can be also view via date picker",
         "Data from CNB are obtained on mount - axios is used. In order to pass CORS policies heroku proxy is used"
+      ]
+    },
+    {
+      name: "Randmo user generator",
+      preview: userGenGif,
+      github: { icon: <FaGithub />, link: "https://github.com/bunatl/user-generator" },
+      demo: { icon: <RiComputerLine />, link: "https://user.techis.fun/" },
+      technologies: [
+        { icon: <FaReact />, name: "ReactJS", link: "https://reactjs.org/" },
+        { icon: "", name: "Typescript", link: "https://www.typescriptlang.org/" },
+      ],
+      info: [
+        "Online web application that fetches randomly generated users and display them",
+        "User can specify parameters that will be apply during info generation",
+        "Application is benefiting from already implemented API that generating data about virtual users",
+        "The application is typed with Typescript and strict mode for strong type checks and enforcement"
       ]
     },
     {
@@ -70,6 +88,21 @@ function Portfolio () {
         "Each tweet can liked, disliked or even deleted",
         "Tweets can be filtered by title or text",
         "In the future tweets will be stored in a DB (as a persistent memory)"
+      ]
+    },
+    {
+      name: "Personal Website",
+      preview: www,
+      github: { icon: <FaGithub />, link: "https://github.com/bunatl/public-website" },
+      demo: { icon: <RiComputerLine />, link: "https://bunat.cz/" },
+      technologies: [
+        { icon: <FaReact />, name: "ReactJS", link: "https://reactjs.org/" },
+      ],
+      info: [
+        "My personal website, for my online presence",
+        "The website is also a project that is part of my projects' portfolio",
+        "It is written in ReactJS, using diffrent libraries and ReactJS & JS concepts to ilustrate my knowledge and skills in this field",
+        "I continuosly working and improving my website for better user/reader experience"
       ]
     },
     {

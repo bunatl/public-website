@@ -30,9 +30,17 @@ function BlogPostList ({ prop, name, textFilter }) {
                 {/* Main topics */ }
                 { prop
                     .filter(x => {
+                        let subItem = false;
+
+                        for (const y of x.children)
+                            if (y.name.toLowerCase().indexOf(textFilter.toLowerCase()) !== -1) {
+                                subItem = true;
+                                break;
+                            }
+
                         return (
                             toogled && (
-                                (textFilter === "" || textFilter === undefined) ||
+                                (textFilter === "" || textFilter === undefined) || subItem ||
                                 (x.mainTopic.toLowerCase().indexOf(textFilter.toLowerCase()) !== -1)
                             )
                         );

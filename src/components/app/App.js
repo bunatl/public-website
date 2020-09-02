@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // React router setup, creating and changing routes + route params tutorial: https://www.youtube.com/watch?v=110dW3l5GQY
@@ -13,6 +12,8 @@ import Blog from '../content/Blog';
 import HireMe from '../content/HireMe';
 import Home from '../content/Home';
 import Portfolio from '../content/Portfolio';
+
+import '../styles/styles.scss';
 
 function App () {
   return (

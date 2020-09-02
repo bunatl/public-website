@@ -1,0 +1,137 @@
+#aboutMe{
+    @include flex(column, wrap, space-between);
+
+    #aboutMeCard{
+        width: 90%;
+        max-width: 18em;
+        margin: 0 auto 2em auto;
+        text-align: center;
+        font-size: unquote('min(4vw, 1.25em)');
+        
+        .card-body{
+            padding: 1em .25em;
+        }
+    }
+    
+    #aboutMeInfo{
+        @include flex(column, wrap, space-between);
+        width: 100%;
+    }
+
+    #cardButtons{
+        @include flex(row, wrap, space-around);
+        padding-top: 1em;
+
+        > div{
+            width: 40%;
+            min-width: 5em;
+            margin-bottom: .3em;
+            border-radius: .4em;
+            height: 2.2em;
+            /* vertically centered */
+            line-height: 2.2em;
+            text-align: center;
+            font-size: 1.15em;
+            
+            color: white;
+            align-content: center;
+            
+            &:first-child{
+                background: $theme-turqoise;
+            }
+            &:last-child{
+                background: $theme-blue;
+            }
+
+            > a{
+                color: white;
+                text-decoration: none;
+
+                &:hover{
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #aboutMeBio{
+        text-align: justify;
+        font-size: unquote('min( 3vw, 1.1em)');
+    }
+
+    @media only screen and (min-width: $responsive-width){
+        @include flex(column, wrap, space-between);
+
+        #aboutMeInfo{
+            @include flex( row, wrap, space-between);
+            
+            #aboutMeCard{
+                width: 45%;
+                margin: 0 auto;
+                // min-width: 17em;
+                // margin-right: 1em;
+            }
+            
+            #aboutMeBio{
+                margin: 0 auto;
+                width: 50%;
+            }
+        }
+    }
+}
+
+#aboutMeWriting{
+    @include flex(column, wrap, space-between);
+
+    > div:first-child{
+        margin-top: 1em;
+        font-size: unquote('min(5.6vw, 2.2em)');
+        font-weight: bold;
+    }
+
+    // titles for buttons
+    > div:nth-child(2),
+    > div:nth-child(4) {
+        font-size: unquote('min(4.5vw, 1.25em)');
+        font-weight: bold;
+    }
+
+    // general and english writing -> buttons
+    > div:nth-child(3),
+    > div:nth-child(5) {
+        @include flex( column, wrap , space-between);
+        
+        > div{
+            width: 100%;
+            max-width: 15em;
+            border: 1px solid black;
+            margin: .6em auto;
+            padding: .4em;
+            text-align: center;
+            border-radius: .75em;
+            font-size: unquote('min(4vw, 1.1em)');
+            background: white;
+            
+            > a {
+                color: black;
+                text-decoration: none;
+                
+                &:hover{
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        @media only screen and (min-width: $responsive-width){
+            @include flex(row, nowrap, center);
+            height: 100%;
+            
+            > div{
+                height: 100%;
+                margin: auto 1em;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+// shared
+@import './variables';
+@import './navigation';
+@import './footer';
+
+// index page
+@import './index/cover';
+@import './index/aboutme';
+@import './index/projects';
+@import './index/stats';
+@import './index/map';
+@import './index/contactMe';
+
+// about me page
+@import './aboutme/aboutMe';
+@import './aboutme/skills';
+@import './aboutme/work';
+@import './aboutme/internships';
+@import './aboutme/education';
+@import './aboutme/certificates';
+
+// portfolio
+@import './portfolio/projects';
+
+// blog
+@import './blog/postSearch';
+
+// hire me
+@import './hireme/cooperation';
+@import './hireme/tutoring';

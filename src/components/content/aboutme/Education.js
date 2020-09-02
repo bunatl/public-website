@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import TableRow from './tableRows/EducationTableRow';
 
-import './aboutme.css';
-
 // Unis icons
 import uoe from "../../../assests/images/universities/uoeTransparent.png";
 import ctu from "../../../assests/images/universities/ctuTransparent.png";
@@ -37,7 +35,7 @@ function Education () {
   ]);
 
   return (
-    <section>
+    <section id="education">
       <h2><span role="img" aria-labelledby="uniHat">🎓 </span>Education</h2>
       { unis.map((value, index) => (
         <Table striped

@@ -1,0 +1,16 @@
+/* Map */
+#map{
+    /* Overwrite section padding setting */
+    /* Map element will take full width */
+    padding: 3em 0 0 0;
+    width: 100%;
+
+    > h2{
+        text-align: center;
+        font-size: unquote('min(6vw, 1.5em)');
+    }
+    
+    >svg{
+        width: 100%;
+    }
+}

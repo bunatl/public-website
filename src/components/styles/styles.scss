@@ -1,0 +1,44 @@
+@import './imports';
+
+h1{
+    text-align: center;
+}
+
+body{
+    width: 100%;
+    min-width: 250px;
+    font-family: Verdana, Geneva, sans-serif, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @media screen and (min-width: $responsive-width){
+        max-width: 1440px;
+    }
+}
+
+/* Content */
+#pageContent{
+    width: 100%;
+    height: 100%;
+    background: lightgrey;
+
+    @media screen and (min-width: $responsive-width){
+        margin-left: $nav-width;
+        max-width: calc( 100% - #{ $nav-width } );
+        // overflow-x: hidden;
+    }
+}
+
+section{
+    padding: 1em;
+    @media screen and (min-width: $responsive-width){
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 3.5em 2em 1em 2em;
+    }
+} 
+
+/* Tables general - mainly for about me page*/
+table > tbody > tr:first-child{
+    font-size: 1.4em;
+    font-weight: bold;
+}

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 
-import Project from './portfolio/Project';
-import './portfolio/portfolio.css';
-
 // import projects preview pics
 // import tech icons react, js es6 / 2017, html5, css3
 // FaHtml5, FaNodeJs, FaJava, FaGithub --  DiMongodb, DiMysql
@@ -148,7 +145,39 @@ function Portfolio () {
       <h1>Portfolio</h1>
       {/* render array of projects */ }
       { projects.map((item, i) => (
-        <Project key={ i } prop={ item } />
+        // props structure: name, preview, git, demo, tech[], info[]
+        <section className="project" key={ i }>
+          {/* Left Side */ }
+          <div>
+            {/* Preview */ }
+            <div><a href={ item.preview } target="_blank" rel="noopener noreferrer"><img src={ item.preview } alt="Project preview"></img></a></div>
+            {/* Git and preview */ }
+            <div>
+              <div><a href={ item.github.link } target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a></div>
+              <div><a href={ item.demo.link } target="_blank" rel="noopener noreferrer"><RiComputerLine /> Live demo</a></div>
+            </div>
+            {/* Technologies */ }
+            <div>
+              { item.technologies.map((tech, index) => (
+                <div key={ index }><a href={ tech.link } target="_blank" rel="noopener noreferrer">{ tech.icon } { ' ' } { tech.name }</a></div>
+              )) }
+            </div>
+          </div>
+          {/* Right Side */ }
+          <div>
+            {/* Name */ }
+            <div>{ item.name }</div>
+            {/* Info */ }
+            <div>
+              <ul>
+                { item.info.map((item, i) => (
+                  <li key={ i } style={ { marginBottom: ".3em" } }>{ item }</li>
+                )) }
+              </ul>
+            </div>
+          </div >
+        </section >
+
       )) }
 
     </div>

@@ -1,0 +1,35 @@
+#stats{
+    @include flex (column, wrap, space-between);
+    
+    padding-top: 2em;
+    text-align: center;
+    
+    .counter{
+        width: 90%;
+        max-width: 20em;
+        border-radius: .75em;
+        border: 2px solid black;
+        margin: 1em auto 0 auto;
+        @include flex (column, wrap, space-around);
+                
+        span{
+            text-align: center;  
+            font-size: unquote('min(6.5vw, 1.25em)'); 
+            margin-bottom: .5em;
+            
+            // the number
+            &:nth-child(2){
+                font-size: unquote('min(8vw, 1.4em)');
+                font-weight: bold;
+            }
+        }
+    }
+
+    @media screen and (min-width: $responsive-width){
+        @include flex (row, nowrap, space-between);
+
+        .counter{
+            width: 30%;
+        }
+    }
+}

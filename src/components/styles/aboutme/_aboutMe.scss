@@ -1,0 +1,39 @@
+#aboutMeSection{
+    @include flex (column, nowrap, space-between);
+    column-gap: 2em;
+    
+    @media screen and (min-width: $responsive-width ){
+        @include flex (row, wrap, space-between);
+    }
+
+
+    > div{
+        width: 100%;
+        min-width: 14em;
+
+        &:first-child{
+            text-align: justify;
+        }
+    }
+
+    // second div
+    #aboutMePageCard{
+        max-width: 18em;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        a{
+            text-decoration: none;
+            color: black;
+            
+            &:hover{
+                transform: scale(1.4);
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+
+

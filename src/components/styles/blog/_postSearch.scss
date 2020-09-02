@@ -1,0 +1,78 @@
+#blog{
+    @media screen and (min-width: $responsive-width){
+        padding: auto 2em;
+        min-height: 85.2vh;
+    }
+}
+
+/* blogSearchBar */
+#blogSearchBar{
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* lists of topics */
+#topicLists{
+    @include flex(column, nowrap, space-around);
+    
+    border: 2px solid gray;
+    border-radius: 1.5em;
+    padding: 1em;
+    margin: 1.5em;
+    font-size: unquote('min(3vw, 1em)');
+
+    // individual columns wrappers
+    // contains header <=> buttons and ul
+    > div {
+        width: 100%;
+        max-width: 30em;
+        margin: 0 auto;
+        padding-bottom: 2em;
+        padding-left: 1em;
+        list-style: none;
+
+        /* Button */
+        > button{
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+
+        // ul
+        .topicList > li {
+            // space after list headers
+            margin-bottom: 1em;
+
+            /* first line of the li with nested ul */
+            >span{
+                font-weight: bold;
+                font-size: unquote('min(4.75vw, 1.25em)');
+            }
+
+            // sublist
+            > ul {
+                padding-left: 7.5%;
+                li{
+                    list-style-type: disc;
+                    font-style: italic;
+                    color: black;
+                }
+
+                a:hover{
+                    text-decoration: none;
+                    font-weight: bold;
+                    transform: scale(1.025);
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width: $responsive-width){
+        @include flex(row, nowrap, space-around);
+
+        > div {
+            width: 30%;
+            padding-bottom: 0;
+        }
+    }
+}

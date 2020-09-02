@@ -1,0 +1,33 @@
+#certificates{
+    @include flex(column, nowrap, space-between);
+    
+    > div{
+        width: 90%;
+        max-width: 25em;
+        margin: 0 auto 1.5em auto;
+
+        img{
+            width: 100%;
+        }
+
+        td{
+            vertical-align: middle;
+        }
+    }
+    
+    $responsive-width-plus150: calc( #{$responsive-width} + 150px );
+    @media screen and (min-width: $responsive-width-plus150 ){
+        @include flex(row, wrap, space-between);
+        column-gap: 1em;
+        
+        > div{
+            width: 30%;
+            max-width: 40em;
+            margin-bottom: 1.5em;
+
+            table{
+                width: 100%;
+            }
+        }
+    }
+}

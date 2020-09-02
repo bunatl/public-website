@@ -1,0 +1,33 @@
+#skillsNav{
+    border: 1px solid white;
+    border-top-right-radius: .38em;
+    border-top-left-radius: .38em;
+
+    font-size: unquote('min(3.5vw, 1.1em)');
+    @include flex (column, wrap, space-between);
+
+    table {
+        text-align: center;
+        
+        td{
+            // width: 25%;
+            vertical-align: middle;
+        }
+    }
+
+    .nav-item .active{
+        font-weight: bold;
+    }
+
+    > div > a{
+        height: 100%;
+    }
+
+    a{
+        color: black;
+    }
+        
+    @media screen and (min-width: $responsive-width){
+        @include flex (row, nowrap, space-between);
+    }
+}

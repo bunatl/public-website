@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import Counter from './Counter';
-
+import CountUp from 'react-countup';
 
 // good video about react hooks: https://www.youtube.com/watch?v=j1ZRyw7OtZs
 function Stats () {
@@ -10,29 +9,53 @@ function Stats () {
     { prefix: "Somewhere around", suffix: "lines of code written", start: 1, end: 1635689, duration: 10 },
     { prefix: "Exactly", suffix: "km  traveled", start: 1, end: 124625, duration: 6 }
   ]);
-
-  // in order to remount (update component) its key has be changed
-  const [ myKey, setMyKey ] = useState(1);
+  const [ shown, setShown ] = useState(0);
 
   useEffect(() => {
-    const activateCounters = () => setMyKey(myKey + 1);
+    // show running numbers only once, shown has to be in Counter key - to force remount
+    const activateCounters = () => (shown <= 2) ? setShown(shown + 1) : '';
 
-    window.addEventListener('scroll', activateCounters);
+    // listner are added to section above and below
+    document.getElementById('indexPortfolio').addEventListener('mouseenter', activateCounters);
+    document.getElementById('indexPortfolio').addEventListener('touchmove', activateCounters);
+
+    document.getElementById('map').addEventListener('mouseenter', activateCounters);
+    document.getElementById('map').addEventListener('touchmove', activateCounters);
     return () => {
       // cleanup - removes listener 
-      window.removeEventListener('scroll', activateCounters);
+      document.getElementById('indexPortfolio').removeEventListener('mouseenter', activateCounters);
+      document.getElementById('indexPortfolio').removeEventListener('touchmove', activateCounters);
+
+      document.getElementById('map').removeEventListener('mouseenter', activateCounters);
+      document.getElementById('map').removeEventListener('touchmove', activateCounters);
     };
-  }, [ myKey ]);
+  }, [ shown ]);
 
   return (
     // key will update on wheel event
-    <section className="stats">
+    <section id="stats">
       {
         counters.map((value, index) => (
-          <Counter key={ index + myKey } props={ value } />
+          <Counter key={ index + shown } props={ value } />
         ))
       }
     </section >
+  );
+}
+
+export function Counter ({ props }) {
+  return (
+    <div className="counter">
+      <span>{ props.prefix }</span>
+      <CountUp
+        start={ props.start }
+        end={ props.end }
+        duration={ props.duration }
+        separator=" "
+        redraw={ true }
+        useEasing={ true } />
+      <span>{ props.suffix }</span>
+    </div>
   );
 }
 

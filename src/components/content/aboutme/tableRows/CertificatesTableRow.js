@@ -15,7 +15,7 @@ function CertificatesTableRow ({ prop }) {
       <tr>
         <td>
           <a href={ prop.img }>
-            <img src={ prop.preview } style={ { width: "100%", padding: ".3em" } } alt="certificate"></img>
+            <img src={ prop.preview } alt="certificate"></img>
           </a>
         </td>
       </tr>

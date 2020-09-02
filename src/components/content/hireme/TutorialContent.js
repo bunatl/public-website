@@ -3,7 +3,7 @@ import React from 'react';
 function TutorialContent ({ prop, filter }) {
     return (
         <tr>
-            <td style={ { fontWeight: "bold", fontSize: "1.25em", textAlign: "center" } }>{ prop.title }</td>
+            <td style={ { fontWeight: "bold", fontSize: "1.25em", textAlign: "center" } }><span>{ prop.title }</span></td>
             <td>
                 { prop.questions
                     .filter(x => {

@@ -54,9 +54,6 @@ const MapChart = ({ setTooltipContent }) => {
                     rotate: [ 0, 0, 0 ],
                     scale: 175,
                 } }
-                style={ {
-                    width: "100%"
-                } }
             >
                 <ZoomableGroup center={ [ 60, 40 ] } zoom={ 1 }>
                     <Geographies geography={ geoUrl }>

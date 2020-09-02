@@ -1,0 +1,135 @@
+#portfolio{
+    margin: auto 1em;
+    @media screen and (min-width: $responsive-width){
+        padding: 2em;
+    }
+}
+
+.project{
+    @include flex(column, nowrap, space-between);
+    margin-bottom: 2em;
+    width: 100%;
+    border: 2px solid darkgray;
+    border-radius: .5em;
+    
+    @media screen and (min-width: $responsive-width){
+        @include flex(row, nowrap, space-between);
+        /* overrule section css */
+        padding: .75em;
+        border: none;
+    }
+
+    /* left side */
+    > div:first-child {
+        width: 100%;
+        text-align: center;
+
+        img{
+            max-width: 100%;
+            max-height: 30vh;
+        }
+
+        /* git, demo */
+        > div:nth-child(2), div:nth-child(3){
+            @include flex(row, nowrap, space-around);
+        }
+
+        > div:nth-child(2) > div,
+        > div:nth-child(2) > div > a{
+            width: 50%;
+            text-align: center;
+            font-size: unquote('min(4vw, 1.35em)');
+            
+            color: black;
+            text-decoration: none;
+
+            margin: 1em auto;
+        }
+
+        div:nth-child(2) > div:hover{
+            transform: scale(1.15);
+            font-weight: bold;
+        }
+
+        
+        /* technolgies only */
+        > div:nth-child(3) {
+            border-bottom: 1px solid black;
+            
+            > div{
+                width: 45%;
+                text-align: center;
+                font-size: unquote('min(3.8vw, 1.25em)');
+
+                a{
+                    text-decoration: none;
+                    font-size: .85em;
+                    color: black;
+                    display: inline-block;
+                    &:hover{
+                        transform: scale(1.15);
+                    }
+                }
+            }
+        }
+
+        // CSS for large screens - left side
+        @media screen and (min-width: $responsive-width){
+            min-width: 55%;
+            max-width: 50em;
+            padding: 1em;
+            border-right: 1px solid black;
+
+            > div:nth-child(2) > div > a{
+                font-size: unquote('min(4vw, 1.2em)');
+            }
+
+            /* technolgies only */
+            > div:nth-child(3) {
+                border-bottom: none;
+                font-size: unquote('min(3.8vw, 1.1em)');
+            }
+        }
+    }
+
+    /* right side side */
+    > div:nth-child(2) {
+        width: 100%;
+        padding-right: .5em;
+
+        /* name */
+        > div:first-child {
+            font-size: unquote('min(5.5vw, 1.4em)');
+            padding-left: 1em;
+            margin-bottom: .3em;
+            margin-top: 1em;
+            font-weight: bold;
+            
+            @media screen and (min-width: $responsive-width){
+                font-size: unquote('min(4vw, 1.9em)');
+                margin-top: 0;
+                margin-bottom: .8em;
+            }
+        }
+
+        ul{
+            padding-left: 1em;
+            @media screen and (min-width: $responsive-width){
+                padding-left: 2em;
+                text-align: justify;
+            }
+
+            li{
+                font-size: unquote('min(3.5vw, 1em)');
+            }
+        }
+    }
+
+
+
+}
+
+
+
+
+

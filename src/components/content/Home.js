@@ -8,8 +8,6 @@ import Map from './index/Map';
 import Portfolio from './index/Portfolio';
 import ContactMe from './index/ContactMe';
 
-import './index/Home.css';
-
 function Home () {
   return (
     <div className="home">

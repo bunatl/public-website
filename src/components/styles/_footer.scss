@@ -1,0 +1,45 @@
+footer{
+    padding-top: 2em;
+    text-align: center;
+    background-color: grey;
+    width: 100%;
+    
+    // links
+    > div{
+        padding-bottom: .25em;
+        font-size: unquote('min(4vw , 1em)');
+
+        &.socialMedia{
+            @include flex(row, wrap, space-around);
+            margin: 0 auto 1em auto;
+            max-width: 800px;
+
+            svg{
+                $footer-svg-size: unquote('min(7.5vw , 1.1em)');
+                height: $footer-svg-size;
+                width: $footer-svg-size;
+            }
+        }
+        > a {
+            color: black;
+            font-weight: bold;
+            display: inline-block;
+
+            &:hover{
+                text-decoration: none;
+                transform: scale(1.075);
+                transition-duration: .75s;
+                color: black;
+            }
+        }
+    }
+    svg{
+        margin: auto 1em;
+        font-size: 2em;
+        color: black;
+    
+        &:hover{
+            transform: scale(1.25);
+        }
+    }
+}

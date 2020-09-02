@@ -11,36 +11,41 @@ function HireMeSection () {
     ]);
 
     return (
-        <section>
+        <section id="hireMeCooperation">
             <h2>Business cooperation contracting</h2>
             <article>I am always happy to hear a collaboration proposal from individuals as well as companies in fields of my interest. Mainly in: </article>
 
-            <Table striped
-                bordered
-                hover
-                style={ { textAlign: "center" } }
-            >
-                <thead>
-                    <tr>
-                        <th>Full-Stack projects</th>
-                        <th>Websites</th>
-                        <th>Software Development</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { rows.map((item, i) => (
-                        <tr key={ i } style={ {
-                            fontSize: "1em",
-                            fontWeight: "normal",
-                            textAlign: "center"
-                        } }>
-                            <td>{ item.col1 }</td>
-                            <td>{ item.col2 }</td>
-                            <td>{ item.col3 }</td>
+            {/* to extentd table to 100% had to wrap table to a wrapper: https://stackoverflow.com/questions/28339119/bootstrap-table-wont-fill-container-width/42452287 */ }
+            <div className="table-responsive">
+                <Table
+                    striped
+                    bordered
+                    hover
+                    className="table table-striped table-bordered table-hover"
+                    style={ { textAlign: "center" } }
+                >
+                    <thead>
+                        <tr>
+                            <th><span>Full-Stack projects</span></th>
+                            <th><span>Websites</span></th>
+                            <th><span>Software Development</span></th>
                         </tr>
-                    )) }
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        { rows.map((item, i) => (
+                            <tr key={ i } style={ {
+                                fontSize: "1em",
+                                fontWeight: "normal",
+                                textAlign: "center"
+                            } }>
+                                <td>{ item.col1 }</td>
+                                <td>{ item.col2 }</td>
+                                <td>{ item.col3 }</td>
+                            </tr>
+                        )) }
+                    </tbody>
+                </Table>
+            </div>
         </section>
     );
 }

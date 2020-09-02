@@ -6,7 +6,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import Nav from 'react-bootstrap/Nav';
 
 import TutorialContent from './TutorialContent';
-import './hireme.css';
 
 function Tutoring () {
     const [ navItems ] = useState([
@@ -58,7 +57,7 @@ function Tutoring () {
                     onChange={ e => setFilterText(e.target.value) }
                     style={ { background: "darkgray", fontWeight: "bold", color: "black", textAlign: "center", border: "2px solid white" } } />
             </InputGroup>
-            <Table striped bordered hover id="tutoringTable">
+            <Table striped bordered hover className="table-responsive" id="tutoringTable">
                 <tbody>
                     { tutoring[ navContent ].map((item, i) => (
                         <TutorialContent key={ i } prop={ item } filter={ filterText } />

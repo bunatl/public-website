@@ -1,0 +1,51 @@
+
+#contactForms{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 35em;
+
+    > h2{
+        text-align: center;
+    }
+
+    > form {
+        .input-group-prepend{
+            width: 30%;
+            max-width: 6em;
+            
+            > span{
+                width: 100%;
+                >span{
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        > div:nth-child(4){
+            height: 8em;
+        }
+
+        #buttonWrapper{
+            text-align: center;
+            > button{
+                background: $theme-turqoise;
+                border-color: $theme-blue;
+                font-size: 1em;
+                width: 100%;
+                min-width: 8em;
+                max-width: 15em;
+                color: white;
+                font-weight: bold;
+
+                @media screen and (min-width: $responsive-width){
+                    padding: .25em;
+                    display: inline-block;
+                    &:hover{
+                        transform: scale(1.15);
+                    }
+                }
+            }
+        }
+    }
+}

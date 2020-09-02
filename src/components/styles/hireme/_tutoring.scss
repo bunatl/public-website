@@ -1,0 +1,28 @@
+#tutoringTable td,
+#tutoringTable tr:first-child{
+    font-weight: normal;
+    font-size: unquote('min(4vw, 1.05em)');
+}
+
+#tutoringTable td{
+
+    &:first-child{
+        vertical-align: middle;
+        width: 20%;
+
+        span{
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+
+        // $responsive-width
+        @media screen and (min-width: $responsive-width){
+            width: 30%;
+            span{
+                writing-mode: unset;
+                text-orientation: mixed;
+            }
+        }
+    }
+}
+

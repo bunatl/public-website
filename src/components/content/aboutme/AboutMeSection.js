@@ -12,7 +12,7 @@ function AboutMeSection () {
   return (
     <section id="aboutMeSection">
       {/* text about me */ }
-      <div style={ { textAlign: "justify", marginRight: "2em" } }>
+      <div>
         <h2><span role="img" aria-labelledby="hello">🙋‍♂️ </span>Few words about me</h2>
         <p>I am a tech enthusiastic born in Prague, Czech Republic. I have had studied at many different universities all over the world and I take great pride in my international experience. It showed and taught me different approaches on how to deal with problems. I believe in learning by mistakes and simply by trying. I also like to share my opinions - on my website. I always do my best to achieve my dreams and goals. Because no one else would do it for me. Over time I found out that I can easily learn new things and make a good decision. I believe it is also thanks to my vast knowledge.
         </p>
@@ -21,7 +21,7 @@ function AboutMeSection () {
         </p>
         <p>
           I don't just code, I have a wide range of analytics and systematic skills that helps me finding clever solutions for improving/creating optimal programs.
-</p>
+        </p>
       </div>
 
       {/* aside info card about me */ }

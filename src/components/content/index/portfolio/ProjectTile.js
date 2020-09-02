@@ -3,16 +3,16 @@ import React from 'react';
 // {prop} = props.prop => compoment propbs and passed variable
 function ProjectTile ({ prop }) {
     return (
-        <div style={ { minHeight: "27em" } }>
+        <div>
             {/* Name */ }
-            <div style={ { margin: ".5em auto 0 auto" } }>{ prop.name }</div>
+            <div>{ prop.name }</div>
             <div><a href="/Portfolio">More info</a></div>
             {/* Picture */ }
-            <div style={ { height: "12.5em" } }>
-                <img src={ prop.preview } alt={ "Preview" } style={ { maxHeight: "100%" } }></img>
+            <div>
+                <img src={ prop.preview } alt={ "Preview" }></img>
             </div>
             {/* Code, demo */ }
-            <div style={ { margin: ".5em auto" } }>
+            <div>
                 <div>
                     { prop.github.icon }{ ' ' }
                     <a href={ prop.github.link }>GitHub</a>
@@ -23,7 +23,7 @@ function ProjectTile ({ prop }) {
                 </div>
             </div>
             {/* Description */ }
-            <div style={ { marginBottom: "1em", fontStyle: "italic" } }>{ prop.description }</div>
+            <div>{ prop.description }</div>
             {/* Technologies */ }
             <div>
                 { prop.technologies.map((tech, index) => (

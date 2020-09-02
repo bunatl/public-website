@@ -7,8 +7,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import Post from './blog/Post';
 import BlogPostList from './blog/BlogPostList';
 
-import './blog/blog.css';
-
 function Blog () {
   const [ education ] = useState([
     { mainTopic: "FIT, ČVUT", children: [ { name: "Semestr 1", link: "" }, { name: "Semestr 2", link: "" }, { name: "Semestr 3", link: "" }, { name: "Semestr 4", link: "" }, { name: "Semestr 5, 6, 7", link: "" }, { name: "Semestr 8", link: "" } ] },

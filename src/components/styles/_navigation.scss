@@ -1,0 +1,120 @@
+/* Mobile view CSS */
+// horizontal bar
+nav{
+    height: $nav-height;
+    width: 100%;
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media screen and (min-width: $responsive-width){
+        height: 100vh;
+        width: $nav-width;
+        max-width: $nav-max-width;
+        position: fixed;
+
+        /* Background transition */
+        /* fallback for old browsers */
+        background: $theme-nav-green;  
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient($theme-nav-green, $theme-nav-blue); 
+    }
+}
+
+#navLinks{
+    @include flex(row, nowrap, space-between);
+    padding: 1em;
+
+    /* Center vertically */
+    height: 100%;
+    align-items: center;
+    
+    /* Background transition */
+    /* fallback for old browsers */
+    background: $theme-nav-green;  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* Left to right: https://www.w3schools.com/css/css3_gradients.asp */
+    background: linear-gradient(to right,$theme-nav-green, $theme-nav-blue); 
+
+    $nav-svg-height: unquote('min(8vw , 3.5em)');
+    /* Logo */
+    > div:first-child img {
+        height: $nav-svg-height;
+    }
+
+    > div{
+        svg{
+            height: $nav-svg-height;
+            width: $nav-svg-height;
+            color: black;
+        }
+    }
+
+    a svg:hover{
+        /* Cursor properties https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+        cursor: pointer;
+        transform: scale(1.17);
+        transition-duration: 1.5s;
+        fill: rgb(4, 15, 65);
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media screen and (min-width: $responsive-width){
+        @include flex(column, nowrap, space-between);
+
+        /* Icons will be spread in the whole nav */
+        height: 100%;
+        padding-bottom: 5em;
+
+        /* Centers icons */
+        text-align: center;
+
+        background: linear-gradient(to bottom,$theme-nav-green, $theme-nav-blue);
+
+        padding-top: 2.5em;
+
+        /* Website logo */
+        > div:first-child img{
+            transform: scale(1.4);
+        }
+    }
+}
+
+
+#progress-container{
+    display: none;
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media screen and (min-width: $responsive-width){
+        display: initial;
+        height: 100vh;
+        position: fixed;
+        width: $progress-bar-width;
+        border-right: 1px solid black;
+
+
+        @keyframes barberpole {
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+        /* The progress bar (scroll indicator) */
+        #progress-bar {
+            /* Always same as its container */
+            width: 100%;
+
+            border-bottom: 2px solid black;
+            border-bottom-right-radius: 5px;
+
+            /* Stripe gnerator */
+            /* https://stripesgenerator.com/ */
+            $stripe-color1: #2865b5;
+            $stripe-color2: #0b702d;
+            background-image: linear-gradient(67deg, $stripe-color1 25%, $stripe-color2 25%, $stripe-color2 50%, $stripe-color1 50%, $stripe-color1 75%, $stripe-color2 75%, $stripe-color2 100%);
+            background-size: 43.45px 102.37px;
+
+            /* Stripe animation */
+            /* https://css-tricks.com/books/fundamental-css-tactics/striped-barberpole-animation/ */
+            background-size: 100% 25%;
+            animation: barberpole 5s linear infinite;
+        }
+    }
+}

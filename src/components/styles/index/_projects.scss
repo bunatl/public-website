@@ -1,0 +1,103 @@
+.tabs{
+    @include flex (row, nowrap, space-between);
+    margin: 0 1em;
+
+    > div{
+        width: 100%;
+        border-radius: .7em .7em 0 0;
+        font-size: unquote('min(4vw , 1.3em)');
+        text-align: center;
+        border: 1px solid black;
+        background-color: $theme-turqoise;
+        font-weight: bolder;
+    }
+
+    div:hover,
+    & .active{
+        background: $theme-blue;
+        cursor: pointer;
+    }
+}
+
+
+#projects{
+    width: 100%;
+
+    @include flex (row, wrap, space-around);
+
+    background: darkgrey;
+    padding: 1%;
+    border-radius: .5em;
+    border: 1px solid gray;
+    
+    // single project card
+    > div{
+        width: 100%;
+        height: 100%;
+        padding: .3em;
+        text-align: center;
+        border: 1px solid lightgray;
+
+        // title
+        > div:nth-child(1){
+            font-weight: bold;
+            font-size: unquote('min(6vw, 1.15em)');
+        }
+        // more info
+        > div:nth-child(2){
+            font-size: unquote('min(5vw, 0.8em)');
+            margin-bottom: 1em;
+        }
+        // gif
+        > div:nth-child(3){
+            width: 100%;
+            max-width: 30em; // around 500px
+            margin: 0 auto;
+            > img{
+                width: 100%;
+            }
+        }
+        // Git, live demo
+        > div:nth-child(4){
+            @include flex (row, wrap, space-around);
+            font-size: unquote('min(6vw, 1.1em)');
+
+            > div:hover{
+                transform: scale(1.125);
+                font-weight: bold;
+            }
+        }
+        // description
+        > div:nth-child(5){
+            font-style: italic;
+            font-size: unquote('min(5vw, 0.95em)');
+            margin-bottom: .5em;
+        }
+        // technologies
+        > div:nth-child(6){
+            @include flex (row, wrap, space-around);
+            > div{
+                min-width: 7.5em;
+            }
+        }
+    }
+
+    a:link,
+    a:visited {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: $responsive-width){
+        @include flex (row, wrap, space-around);
+        
+        > div{
+            width: 32%;
+
+            > div:nth-child(3){
+                min-height: 12.5em;
+            }
+        }
+    }
+}

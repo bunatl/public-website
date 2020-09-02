@@ -32,7 +32,7 @@ function Internships () {
   ]);
 
   return (
-    <section>
+    <section id="interships">
       <h2><span role="img" aria-labelledby="ruller">📐 </span>Internships</h2>
       { internships.map((value, index) => (
         <Table striped bordered hover responsive key={ index }>

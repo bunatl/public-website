@@ -31,7 +31,7 @@ function Work () {
   ]);
 
   return (
-    <section>
+    <section id="work">
       <h2><span role="img" aria-labelledby="work">💼 </span>Work</h2>
       { jobs.map((value, index) => (
         <Table striped bordered hover responsive key={ index }>

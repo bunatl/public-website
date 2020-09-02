@@ -8,8 +8,6 @@ import Internships from './aboutme/Internships';
 import Skills from './aboutme/Skills';
 import Certificates from './aboutme/Certificates';
 
-import './aboutme/aboutme.css';
-
 function AboutMe () {
   return (
     <div id="aboutme">

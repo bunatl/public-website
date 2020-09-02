@@ -8,16 +8,28 @@ import InputGroup from 'react-bootstrap/InputGroup';
 function HireMe () {
   const [ validated, setValidated ] = useState(false);
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+  const handleSubmit = event => {
+    if (event.currentTarget.checkValidity() === false) {
+      alert("fal;se");
       event.preventDefault();
       event.stopPropagation();
+    } else {
+      event.preventDefault();
+      const { name, phone, email, text } = event.currentTarget;
+
+      window.Email.send({
+        SecureToken: "bfe0bbfd-d85a-4861-8244-7060f295e5d8",
+        To: 'bunatl@seznam.cz',
+        From: 'bunatl@centrum.cz',
+        Subject: name,
+        Body: `${ text }\n${ email }\n${ phone }`
+      }).then(
+        message => alert(message)
+      );
+
+      setValidated(true);
     }
-
-    setValidated(true);
   };
-
 
   return (
     <section>
@@ -27,12 +39,13 @@ function HireMe () {
           <Form.Group>
             <InputGroup>
               <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon3">
-                  <b>Name</b>
+                <InputGroup.Text>
+                  <span style={ { fontWeight: "bold" } }>Name</span>
                 </InputGroup.Text>
               </InputGroup.Prepend>
               <Form.Control
                 required
+                name="name"
                 type="text"
                 placeholder="Lukas Bunat"
               />
@@ -42,14 +55,13 @@ function HireMe () {
           <Form.Group>
             <InputGroup>
               <InputGroup.Prepend>
-                <InputGroup.Text
-                  id="basic-addon3"
-                >
+                <InputGroup.Text>
                   <span role="img" aria-label="phone emoji">📧</span>
                 </InputGroup.Text>
               </InputGroup.Prepend>
               <Form.Control
                 type="email"
+                name="email"
                 placeholder="name@domain.com"
               />
             </InputGroup>
@@ -64,6 +76,7 @@ function HireMe () {
               </InputGroup.Prepend>
               <Form.Control
                 type="text"
+                name="phone"
                 defaultValue={ "+420 " }
               />
             </InputGroup>
@@ -73,16 +86,15 @@ function HireMe () {
             <Form.Control
               required
               as="textarea"
+              name="text"
               placeholder="Leave me a message here..."
               style={ { height: "100%" } }
             />
           </Form.Group>
 
-          <Button
-            type="submit"
-            style={ { width: "27.5%", minWidth: "8em", margin: "0 auto" } }>
-            Submit form
-        </Button>
+          <div id="buttonWrapper">
+            <Button type="submit">Submit form</Button>
+          </div>
         </Form>
       </div>
     </section>

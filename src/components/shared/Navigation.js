@@ -10,18 +10,12 @@ import LogoImage from "../../assests/images/logo/logoTransparent.svg";
 import { FaUserTie, FaFileCode, FaPencilAlt, FaHandshake } from 'react-icons/fa';
 
 function Navigation () {
-  const NavIconStyle = {
-    height: "3.5em",
-    width: "3.5em",
-    size: "100%",
-    color: "black",
-  };
 
   const [ icons ] = React.useState([
-    { component: <FaUserTie style={ NavIconStyle } />, link: "/AboutMe", tooltip: "About Me" },
-    { component: <FaFileCode style={ NavIconStyle } />, link: "/Portfolio", tooltip: "Portfolio" },
-    { component: <FaPencilAlt style={ NavIconStyle } />, link: "/Blog", tooltip: "Blog" },
-    { component: <FaHandshake style={ NavIconStyle } />, link: "/HireMe", tooltip: "Hire Me" },
+    { component: <FaUserTie />, link: "/AboutMe", tooltip: "About Me" },
+    { component: <FaFileCode />, link: "/Portfolio", tooltip: "Portfolio" },
+    { component: <FaPencilAlt />, link: "/Blog", tooltip: "Blog" },
+    { component: <FaHandshake />, link: "/HireMe", tooltip: "Hire Me" },
     // { component: <FaCogs style={ NavIconStyle } />, link: "", tooltip: "Settings" }
   ]);
 

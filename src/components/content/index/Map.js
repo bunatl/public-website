@@ -8,7 +8,7 @@ function Map () {
   return (
     <section id="map">
       {/* some info */ }
-      <h2 style={ { textAlign: 'center', } }>I like to track places I have visited <span role="img" aria-label="travel icons">✈🌍</span></h2>
+      <h2>I like to track places I have visited <span role="img" aria-label="travel icons">✈🌍</span></h2>
       {/* Area of the actual map */ }
       <MapChart setTooltipContent={ setContent } />
       <ReactTooltip>{ content }</ReactTooltip>

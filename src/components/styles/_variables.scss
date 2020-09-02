@@ -1,0 +1,18 @@
+@mixin flex($direction, $wrap, $content){
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $content;
+}
+
+$responsive-width: 768px;
+$nav-height: 5em;
+$nav-width: 13%;
+$nav-max-width: calc( 0.13 * 1440px );
+$progress-bar-width: 5px;
+
+$theme-nav-green: #159957;
+$theme-nav-blue: #155799;
+
+$theme-blue: #0d779f;
+$theme-turqoise: #0d9c9f;

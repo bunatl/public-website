@@ -3,7 +3,7 @@
     column-gap: 2em;
     
     @media screen and (min-width: $responsive-width ){
-        @include flex (row, wrap, space-between);
+        @include flex (row, nowrap, space-between);
     }
 
 

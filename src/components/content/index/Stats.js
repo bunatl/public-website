@@ -13,7 +13,7 @@ function Stats () {
 
   useEffect(() => {
     // show running numbers only once, shown has to be in Counter key - to force remount
-    const activateCounters = () => (shown <= 2) ? setShown(shown + 1) : '';
+    const activateCounters = () => (shown <= 4) ? setShown(shown + 1) : '';
 
     // listner are added to section above and below
     document.getElementById('indexPortfolio').addEventListener('mouseenter', activateCounters);

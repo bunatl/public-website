@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import ProjectTile from './portfolio/ProjectTile';
+// import ProjectTile from './portfolio/ProjectTile';
 
 // icons
 import { FaNodeJs, FaGithub, FaReact, FaJava } from 'react-icons/fa';
@@ -14,6 +14,13 @@ import tweetGif from '../../../assests/gif/tweet-bot-demo.gif';
 import recorderPng from '../../../assests/images/projects/mouse-recorder-gui.png';
 import stockLogger from '../../../assests/images/projects/StockLogger-gui.png';
 
+// img previews
+import converterGifPreview from '../../../assests/gif/previews/currency-converter-demo-preview.gif';
+// import userGenGifPreview from '../../../assests/gif/previews/user-generator-demo-preview.gif';
+import scraperGifPreview from '../../../assests/gif/previews/webscrape-demo-preview.gif';
+import tweetGifPreview from '../../../assests/gif/previews/tweet-bot-demo-preview.gif';
+import stockLoggerPreview from '../../../assests/images/projects/previews/StockLogger-gui-preview.png';
+
 function Porfolio () {
   const [ currentTab, setCurrentTab ] = useState(0);
 
@@ -21,7 +28,8 @@ function Porfolio () {
     [
       {
         name: "Currency converter",
-        preview: converterGif,
+        fullSize: converterGif,
+        preview: converterGifPreview,
         github: { icon: <FaGithub />, link: "https://github.com/bunatl/CurrencyConverter" },
         demo: { icon: <RiComputerLine />, link: "http://currency.techis.fun/" },
         description: "Online coverter showing current currency exchnage rates published by Czech National Bank.",
@@ -31,7 +39,8 @@ function Porfolio () {
       },
       {
         name: "Web Scrapenator",
-        preview: scraperGif,
+        fullSize: scraperGif,
+        preview: scraperGifPreview,
         github: { icon: <FaGithub />, link: "https://github.com/bunatl/WebScrapenator" },
         demo: { icon: <RiComputerLine />, link: "https://scraper.techis.fun/" },
         description: "An online tool allowing user to scrape data from any given website based on search parameters.",
@@ -43,7 +52,8 @@ function Porfolio () {
       },
       {
         name: "Tweet Bot Wall",
-        preview: tweetGif,
+        fullSize: tweetGif,
+        preview: tweetGifPreview,
         github: { icon: <FaGithub />, link: "https://github.com/bunatl/reactjs-tweet-bot" },
         demo: { icon: <RiComputerLine />, link: "https://wall.techis.fun/" },
         description: "Frontend side of the whole MERN project. Allows anybody to post tweets on public wall.",
@@ -55,6 +65,7 @@ function Porfolio () {
     [
       {
         name: "Mouse Recorder",
+        fullSize: recorderPng,
         preview: recorderPng,
         github: { icon: <FaGithub />, link: "https://github.com/bunatl/MouseRecorder" },
         demo: { icon: <RiComputerLine />, link: "#indexPortfolio" },
@@ -65,7 +76,8 @@ function Porfolio () {
       },
       {
         name: "Market Stock price logger",
-        preview: stockLogger,
+        fullSize: stockLogger,
+        preview: stockLoggerPreview,
         github: { icon: <FaGithub />, link: "https://github.com/bunatl/StockMarketLogger" },
         demo: { icon: <RiComputerLine />, link: "#indexPortfolio" },
         description: "Logger that log data(prices), to a DB, about given stock. It also show historic data.",
@@ -103,6 +115,39 @@ function Porfolio () {
         )) }
       </div>
     </section>
+  );
+}
+
+function ProjectTile ({ prop }) {
+  return (
+    <div>
+      {/* Name */ }
+      <div>{ prop.name }</div>
+      <div><a href="/Portfolio">More info</a></div>
+      {/* Picture */ }
+      <div>
+        <img src={ prop.preview } alt={ "Preview" }></img>
+      </div>
+      {/* Code, demo */ }
+      <div>
+        <div>
+          { prop.github.icon }{ ' ' }
+          <a href={ prop.github.link }>GitHub</a>
+        </div>
+        <div>
+          { prop.demo.icon }{ ' ' }
+          <a href={ prop.demo.link }>Live Demo</a>
+        </div>
+      </div>
+      {/* Description */ }
+      <div>{ prop.description }</div>
+      {/* Technologies */ }
+      <div>
+        { prop.technologies.map((tech, index) => (
+          <div key={ index }>{ tech.icon } { ' ' } { tech.name }</div>
+        )) }
+      </div>
+    </div>
   );
 }
 

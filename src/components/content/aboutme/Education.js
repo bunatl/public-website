@@ -11,7 +11,7 @@ import knu from "../../../assests/images/universities/knuTransparent.png";
 import iitm from "../../../assests/images/universities/iitmTransparent.png";
 import tudelft from "../../../assests/images/universities/tudelftTransparent.png";
 import spsst from "../../../assests/images/universities/spsstTransparent.png";
-import zsBarr from "../../../assests/images/universities/zbBarrTransparent.jpg";
+import zsBarr from "../../../assests/images/universities/zbBarrTransparent.png";
 
 function Education () {
   const [ unis ] = useState([

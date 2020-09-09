@@ -51,9 +51,11 @@ function BlogPostList ({ prop, name, textFilter }) {
                             <ul>
                                 { item.children
                                     .filter(x => {
+                                        // check if header cotains filtered text -> if true - all subitems need to be printed
+                                        const isHeader = item.mainTopic.toLowerCase().indexOf(textFilter.toLowerCase()) !== -1 ? true : false;
                                         return (
                                             toogled && (
-                                                (textFilter === "" || textFilter === undefined) ||
+                                                (textFilter === "" || textFilter === undefined) || isHeader ||
                                                 (x.name.toLowerCase().indexOf(textFilter.toLowerCase()) !== -1)
                                             )
                                         );

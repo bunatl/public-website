@@ -20,12 +20,21 @@ import recorderPng from '../../assests/images/projects/mouse-recorder-gui.png';
 import stockLogger from '../../assests/images/projects/StockLogger-gui.png';
 import www from '../../assests/images/projects/personalWebsite.png';
 
+// img previews
+import converterGifPreview from '../../assests/gif/previews/currency-converter-demo-preview.gif';
+import userGenGifPreview from '../../assests/gif/previews/user-generator-demo-preview.gif';
+import scraperGifPreview from '../../assests/gif/previews/webscrape-demo-preview.gif';
+import tweetGifPreview from '../../assests/gif/previews/tweet-bot-demo-preview.gif';
+import stockLoggerPreview from '../../assests/images/projects/previews/StockLogger-gui-preview.png';
+import wwwPreview from '../../assests/images/projects/previews/personalWebsitePreview.png';
+
 function Portfolio () {
   // name, preview, git, demo, tech[], info[]
   const [ projects ] = useState([
     {
       name: "Currency converter",
-      preview: converterGif,
+      fullSize: converterGif,
+      preview: converterGifPreview,
       github: { icon: <FaGithub />, link: "https://github.com/bunatl/CurrencyConverter" },
       demo: { icon: <RiComputerLine />, link: "http://currency.techis.fun/" },
       technologies: [
@@ -40,7 +49,8 @@ function Portfolio () {
     },
     {
       name: "Randmo user generator",
-      preview: userGenGif,
+      fullSize: userGenGif,
+      preview: userGenGifPreview,
       github: { icon: <FaGithub />, link: "https://github.com/bunatl/user-generator" },
       demo: { icon: <RiComputerLine />, link: "https://user.techis.fun/" },
       technologies: [
@@ -56,7 +66,8 @@ function Portfolio () {
     },
     {
       name: "Web Scrapenator",
-      preview: scraperGif,
+      fullSize: scraperGif,
+      preview: scraperGifPreview,
       github: { icon: <FaGithub />, link: "https://github.com/bunatl/WebScrapenator" },
       demo: { icon: <RiComputerLine />, link: "https://scraper.techis.fun/" },
       technologies: [
@@ -74,7 +85,8 @@ function Portfolio () {
     },
     {
       name: "Tweet Bot Wall",
-      preview: tweetGif,
+      fullSize: tweetGif,
+      preview: tweetGifPreview,
       github: { icon: <FaGithub />, link: "https://github.com/bunatl/reactjs-tweet-bot" },
       demo: { icon: <RiComputerLine />, link: "https://wall.techis.fun/" },
       technologies: [
@@ -89,7 +101,8 @@ function Portfolio () {
     },
     {
       name: "Personal Website",
-      preview: www,
+      fullSize: www,
+      preview: wwwPreview,
       github: { icon: <FaGithub />, link: "https://github.com/bunatl/public-website" },
       demo: { icon: <RiComputerLine />, link: "https://bunat.cz/" },
       technologies: [
@@ -104,6 +117,7 @@ function Portfolio () {
     },
     {
       name: "Mouse Recorder",
+      fullSize: recorderPng,
       preview: recorderPng,
       github: { icon: <FaGithub />, link: "https://github.com/bunatl/MouseRecorder" },
       demo: { icon: <RiComputerLine />, link: "#indexPortfolio" },
@@ -119,7 +133,8 @@ function Portfolio () {
     },
     {
       name: "Market Stock price logger",
-      preview: stockLogger,
+      fullSize: stockLogger,
+      preview: stockLoggerPreview,
       github: { icon: <FaGithub />, link: "https://github.com/bunatl/StockMarketLogger" },
       demo: { icon: <RiComputerLine />, link: "#indexPortfolio" },
       technologies: [
@@ -150,7 +165,7 @@ function Portfolio () {
           {/* Left Side */ }
           <div>
             {/* Preview */ }
-            <div><a href={ item.preview } target="_blank" rel="noopener noreferrer"><img src={ item.preview } alt="Project preview"></img></a></div>
+            <div><a href={ item.fullSize } target="_blank" rel="noopener noreferrer"><img src={ item.preview } alt="Project preview"></img></a></div>
             {/* Git and preview */ }
             <div>
               <div><a href={ item.github.link } target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a></div>
